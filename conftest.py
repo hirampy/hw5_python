@@ -6,7 +6,8 @@ from selenium import webdriver
 @pytest.fixture(scope='function', autouse=True)
 def browser_management():
     browser.config.base_url = 'https://demoqa.com'
-    browser.config.type_by_js = True
+    browser.driver.set_window_size(1080, 800)
+    browser.config.type_by_js = False
     browser.config.timeout = 5.0
 
     driver_options = webdriver.ChromeOptions()
